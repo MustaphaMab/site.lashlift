@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+  FICHIER 1/2 : index.html  →  la STRUCTURE du site (une seule page qui défile).
+  Autre fichier, dans le MÊME dossier : style.css (l'apparence).
+  Dossier "photos" à côté : tes photos. Fichiers robots.txt et sitemap.xml : pour Google (voir leurs commentaires).
+
+  La réservation se fait sur ton site Netlify. SI LE LIEN CHANGE : Ctrl+F, cherche "netlify", remplace aux 2 endroits.
+  Tout ce qui est dans <head> (ci-dessous) est INVISIBLE sur la page : c'est pour Google et les réseaux sociaux.
+-->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5e3d2e">
+
+  <!-- ===== RÉFÉRENCEMENT (SEO) ===== -->
+  <!-- Titre (affiché sur Google) : 60 caractères max, mots importants au début -->
+  <title>Lash lift coréen à Vitrolles – Rehaussement de cils | Lashlift Coréen</title>
+  <!-- Description (sous le titre sur Google) : environ 150 caractères -->
+  <meta name="description" content="Rehaussement de cils coréen (lash lift) à Vitrolles, Vieux Village : teinture et soins inclus, 40 €. Découvrez les réalisations et réservez en ligne.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Aperçu quand le lien est partagé (WhatsApp, Facebook, Instagram…) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Lashlift Coréen">
+  <meta property="og:title" content="Lash lift coréen à Vitrolles – Lashlift Coréen">
+  <meta property="og:description" content="Rehaussement de cils coréen à Vitrolles : teinture et soins inclus. Réservez en ligne.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- À AJOUTER QUAND TON NOM DE DOMAINE EST PRÊT (remplace VOTRE-DOMAINE.fr, puis enlève les 2 lignes de commentaire qui entourent ce bloc : la 1re au-dessus et la dernière en dessous) :
+  <link rel="canonical" href="https://VOTRE-DOMAINE.fr/">
+  <meta property="og:url" content="https://VOTRE-DOMAINE.fr/">
+  <meta property="og:image" content="https://VOTRE-DOMAINE.fr/photos/photo-2.jpg">
+  -->
+
+  <!-- Petite icône de l'onglet -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E👁️%3C/text%3E%3C/svg%3E">
+
+  <!-- Fiche d'identité pour Google (données structurées). Seules les infos sûres y figurent.
+       Pour l'améliorer, ajoute après "areaServed" (avec une virgule) :
+         "telephone": "+33…",  "image": "https://VOTRE-DOMAINE.fr/photos/photo-2.jpg",
+         "openingHours": "Mo-Sa 10:00-17:00"  (avec tes vrais horaires)  et, dans address, "streetAddress": "ta rue"
+       Vérifie aussi le code postal 13127. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Lashlift Coréen",
+    "description": "Rehaussement de cils coréen (lash lift) à Vitrolles : teinture et soins inclus.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vitrolles",
+      "postalCode": "13127",
+      "addressRegion": "Provence-Alpes-Côte d'Azur",
+      "addressCountry": "FR"
+    },
+    "areaServed": "Vitrolles",
+    "sameAs": ["https://www.instagram.com/lashlift.coreen/"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Prestations",
+      "itemListElement": [{
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "40",
+        "itemOffered": { "@type": "Service", "name": "Lash lift coréen (teinture et soins inclus)" }
+      }]
+    }
+  }
+  </script>
+
+  <!-- Polices et apparence -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main>
+
+  <!-- ===== ACCUEIL ===== (un seul <h1> par page : c'est le titre principal pour Google) -->
+  <header class="hero">
+    <p class="eyebrow">Rehaussement de cils</p>
+    <h1>Lash lift coréen <span>à Vitrolles</span></h1>
+    <p class="lead">Un regard ouvert et naturel, sans extensions. Teinture et soins inclus.</p>
+    <!-- LIEN NETLIFY (1/2) -->
+    <a class="cta" href="https://ayda-lashlift.netlify.app">Prendre rendez-vous</a>
+  </header>
+
+  <!-- ===== LA PRESTATION ===== -->
+  <section class="bloc" id="prestation" aria-labelledby="t-prestation">
+    <h2 id="t-prestation">Le lash lift coréen</h2>
+    <p>Le lash lift coréen, ou rehaussement de cils, met en valeur vos cils naturels pour ouvrir le regard, sans extensions. La teinture et les soins sont inclus dans la prestation, réalisée à Vitrolles, dans le Vieux Village.</p>
+    <p class="prix">40 €</p>
+  </section>
+
+  <!-- ===== RÉALISATIONS ===== (les "alt" décrivent la photo : utiles pour Google et l'accessibilité)
+       Pour AJOUTER une photo : copie une ligne <img>. Pour en RETIRER une : supprime la ligne.
+       Photos légères = site plus rapide = meilleur référencement (idéal : moins de 300 Ko chacune). -->
+  <section class="bloc" id="realisations" aria-labelledby="t-realisations">
+    <h2 id="t-realisations">Mes réalisations de lash lift</h2>
+    <!-- La 1re photo (avant/après) est affichée en plus grand. Un clic sur une photo l'ouvre en taille réelle. -->
+    <div class="grille">
+      <a href="photos/avant et apres.png" target="_blank" rel="noopener"><img src="photos/avant et apres.png" width="268" height="359" alt="Rehaussement de cils coréen à Vitrolles : yeux avant et après" loading="lazy"></a>
+      <a href="photos/cils rehaussés.png" target="_blank" rel="noopener"><img src="photos/cils rehaussés.png" width="268" height="359" alt="Lash lift coréen : cils naturels rehaussés et teintés" loading="lazy"></a>
+      <a href="photos/regard ouvert.png" target="_blank" rel="noopener"><img src="photos/regard ouvert.png" width="268" height="359" alt="Lash lift coréen : regard ouvert, vue de près" loading="lazy"></a>
+    </div>
+    <p class="voirplus"><a href="https://www.instagram.com/lashlift.coreen/" target="_blank" rel="noopener">Voir plus de réalisations sur Instagram</a></p>
+  </section>
+
+  <!-- ===== BON À SAVOIR ===== -->
+  <section class="bloc" id="savoir" aria-labelledby="t-savoir">
+    <h2 id="t-savoir">Bon à savoir</h2>
+
+    <details>
+      <summary>Contre-indications</summary>
+      <p>Je ne fais pas de rehaussement si :</p>
+      <ul>
+        <li>Conjonctivite ou infection oculaire</li>
+        <li>Orgelet ou chalazion</li>
+        <li>Allergie connue à l'un des composants</li>
+        <li>Chirurgie oculaire récente</li>
+        <li>Yeux très larmoyants ou hypersensibles</li>
+        <li>Eczéma, psoriasis ou lésion sur la paupière</li>
+        <li>Déconseillé aux femmes enceintes ou allaitantes</li>
+        <li>Les lentilles doivent impérativement être retirées avant la prestation</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Après un rehaussement de cils</summary>
+      <ul>
+        <li>Éviter de frotter les cils ou de les mouiller pendant les premières 24 h</li>
+        <li>Éviter le mascara waterproof</li>
+        <li>Éviter les recourbe-cils</li>
+        <li>Éviter les produits à base d'huile</li>
+        <li>Utiliser un nettoyant doux</li>
+        <li>Brosser délicatement</li>
+        <li>Éviter la vapeur et la chaleur excessive pendant 24 à 48 heures</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- ===== QUESTIONS FRÉQUENTES : ce sont les phrases que les gens tapent sur Google ===== -->
+  <section class="bloc" id="faq" aria-labelledby="t-faq">
+    <h2 id="t-faq">Questions fréquentes</h2>
+
+    <details>
+      <summary>Qu'est-ce qu'un lash lift coréen ?</summary>
+      <p>C'est un rehaussement de vos cils naturels : ils sont relevés pour ouvrir le regard, sans pose d'extensions.</p>
+    </details>
+    
+    <details>
+      <summary>Où se déroule la prestation ?</summary>
+      <p>À Vitrolles, dans le Vieux Village, uniquement sur rendez-vous, du lundi au samedi.</p>
+    </details>
+    <details>
+      <summary>Y a-t-il des contre-indications ?</summary>
+      <p>Oui, par exemple une infection oculaire, une allergie connue ou une grossesse. Consultez la liste complète dans la rubrique « Contre-indications » ci-dessus.</p>
+    </details>
+    <details>
+      <summary>Comment réserver mon rendez-vous ?</summary>
+      <p>En ligne, en quelques clics : choisissez votre créneau avec le bouton « Prendre rendez-vous ».</p>
+    </details>
+  </section>
+
+  <!-- ===== RÉSERVER ===== -->
+  <section class="bloc reserver" id="reserver" aria-labelledby="t-reserver">
+    <h2 id="t-reserver">Réserver</h2>
+    <p>La réservation se fait en ligne, en quelques clics.</p>
+    <p class="hint">Avant de réserver, vérifiez les <a href="#savoir">contre-indications</a>.</p>
+    <!-- LIEN NETLIFY (2/2) -->
+    <a class="cta" href="https://ayda-lashlift.netlify.app">Choisir mon créneau</a>
+  </section>
+
+  <!-- ===== INFOS PRATIQUES ===== -->
+  <footer class="infos">
+    <p>Lashlift Coréen · Vitrolles, Vieux Village</p>
+    <p>Du lundi au samedi · Sur rendez-vous</p>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/*
+  FICHIER 2/2 : style.css  →  l'APPARENCE du site.
+  Les couleurs sont tirées de ton Instagram : tons sable, beige et brun, comme tes photos.
+  Pour changer les couleurs, modifie uniquement la partie COULEURS.
+
+  SI QUELQUE CHOSE S'AFFICHE MAL :
+   1. Vérifie qu'il ne manque aucune accolade { ou } et aucun point-virgule ;
+   2. Dans le navigateur : clic droit > Inspecter, pour voir quelle règle s'applique.
+*/
+
+/* ================= COULEURS ================= */
+:root {
+  --bg:#f4ede6;      /* fond de la page (sable clair) */
+  --card:#fbf7f3;    /* fond des cartes */
+  --ink:#2a201b;     /* texte (brun très foncé) */
+  --mute:#7d6b5f;    /* texte secondaire */
+  --line:#e0d3c7;    /* bordures */
+  --acc:#5e3d2e;     /* couleur principale (boutons, choix sélectionné) */
+  --acc-ink:#ffffff; /* texte sur la couleur principale */
+  --soft:#ecdfd3;    /* fonds doux */
+  padding-top: env(safe-area-inset-top, 0px);       /* marges de sécurité sur téléphone */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+/* Mode sombre : automatique si le téléphone est en mode sombre */
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#14100e; --card:#1f1a17; --ink:#f1e8e0; --mute:#b3a296;
+          --line:#3b322c; --acc:#d9b49a; --acc-ink:#1f1410; --soft:#2c2420; }
+}
+
+/* ================= BASE ================= */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }   /* défilement doux vers les sections */
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 Jost, system-ui, sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 0 20px 48px; }
+
+h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; margin: 0; }
+h1 { font-size: clamp(3rem, 14vw, 4.6rem); line-height: 1; letter-spacing: -.01em; }
+h1 span { display: block; margin-top: 14px; font: 500 .9rem Jost, sans-serif;   /* "à Vitrolles" : petit, sous le titre */
+          text-transform: uppercase; letter-spacing: .18em; color: var(--mute); }
+h2 { font-size: 1.9rem; line-height: 1.15; margin-bottom: 14px; text-align: center; }
+h3 { font-size: 1.35rem; margin-bottom: 12px; }
+p { margin: 0 0 12px; text-align: center; }   /* texte centré par défaut */
+.hint { color: var(--mute); margin: 0; }
+
+/* ================= ACCUEIL ================= */
+.hero { padding: 64px 0 44px; text-align: center; }   /* text-align: center = tout le bloc d'accueil est centré */
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; color: var(--mute); margin-bottom: 14px; }
+.lead { font-size: 1.15rem; max-width: 30ch; margin: 18px auto 26px; }   /* "auto" centre ce bloc de largeur limitée */
+.cta, .go {
+  display: inline-block; padding: 14px 28px; border: 0; border-radius: 999px;
+  background: var(--acc); color: var(--acc-ink); text-decoration: none;
+  font: 500 1rem Jost, sans-serif; cursor: pointer;
+}
+
+/* ================= SECTIONS ================= */
+.bloc { padding: 36px 0; border-top: 1px solid var(--line); }
+.reserver { text-align: center; }                          /* section Réserver centrée */
+.reserver .hint { margin-bottom: 20px; }
+.reserver .hint a { color: var(--acc); }
+.prix { font: 600 2.2rem/1 "Cormorant Garamond", Georgia, serif; color: var(--acc); margin: 6px 0 0; }
+
+/* ================= RÉALISATIONS ================= */
+.grille { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }   /* 2 photos par ligne */
+.grille a { display: block; }                                 /* chaque photo est un lien : clic = photo en grand */
+/* 1re photo (avant/après) : toute la largeur, et sa hauteur s'adapte à la photo (rien n'est coupé) */
+.grille a:first-child { grid-column: 1 / -1; }
+.grille a:first-child img { height: auto; aspect-ratio: auto; }
+.grille img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; background: var(--soft); }
+.voirplus { margin: 14px 0 0; }
+.voirplus a, .infos a { color: var(--acc); }
+
+/* ================= BON À SAVOIR (menus qui s'ouvrent) ================= */
+details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 10px; }
+summary {
+  display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+  padding: 16px 20px; font: 600 1.3rem "Cormorant Garamond", Georgia, serif;
+  list-style: none;                                       /* retire la flèche par défaut */
+}
+summary::-webkit-details-marker { display: none; }        /* idem pour Safari */
+summary::after { content: "+"; color: var(--acc); }       /* le + devient – quand c'est ouvert */
+details[open] summary::after { content: "–"; }
+details p { margin: 0 20px 8px; }
+details ul { margin: 0; padding: 0 20px 18px 40px; }
+details li { margin-bottom: 6px; }
+.rappel { margin-bottom: 16px; }
+.rappel a { color: var(--acc); }
+
+/* ================= CARTES DE RÉSERVATION ================= */
+.carte { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 14px; }
+
+.opts { display: grid; gap: 10px; }
+.opt {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  width: 100%; padding: 14px 16px; text-align: left;
+  border: 1.5px solid var(--line); border-radius: 10px;
+  background: transparent; color: inherit; font: inherit; cursor: pointer;
+}
+.opt small { display: block; color: var(--mute); }
+.opt b { font-weight: 500; white-space: nowrap; }
+
+.days { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 12px; }
+.day {
+  flex: 0 0 auto; min-width: 64px; padding: 8px 6px; text-align: center;
+  border: 1.5px solid var(--line); border-radius: 10px;
+  background: transparent; color: inherit; font: inherit; cursor: pointer;
+}
+.day span { display: block; font-size: .8rem; opacity: .8; }
+.day strong { font-weight: 500; font-size: 1.15rem; }
+
+.slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 8px; }
+.slot {
+  padding: 10px 0; border: 1.5px solid var(--line); border-radius: 10px;
+  background: transparent; color: inherit; font: inherit; cursor: pointer;
+}
+
+/* Élément choisi (service, jour ou horaire) : il prend la couleur principale */
+.opt[aria-pressed="true"], .day[aria-pressed="true"], .slot[aria-pressed="true"] {
+  background: var(--acc); border-color: var(--acc); color: var(--acc-ink);
+}
+.opt[aria-pressed="true"] small { color: inherit; opacity: .85; }
+
+/* ================= FORMULAIRE ================= */
+label { display: block; font-weight: 500; margin: 0 0 14px; }
+input, textarea {
+  display: block; width: 100%; margin-top: 6px; padding: 12px;
+  border: 1.5px solid var(--line); border-radius: 10px;
+  background: var(--bg); color: var(--ink); font: inherit;
+}
+textarea { min-height: 76px; resize: vertical; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--acc); outline-offset: 2px; }
+
+.recap { background: var(--soft); border-radius: 10px; padding: 12px 14px; margin: 0 0 14px; }
+.go { display: block; width: 100%; }
+.go:disabled { opacity: .45; cursor: not-allowed; }       /* grisé tant que c'est incomplet */
+.done { display: none; }                                  /* caché jusqu'à l'envoi */
+
+/* ================= INFOS PRATIQUES ================= */
+.infos { border-top: 1px solid var(--line); padding-top: 24px; color: var(--mute); font-size: .92rem; text-align: center; }
+.infos p { margin: 0 0 4px; }

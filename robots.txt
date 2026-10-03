@@ -1,0 +1,6 @@
+# Dit à Google qu'il peut visiter tout le site, et où trouver le plan du site.
+# À FAIRE : remplace VOTRE-DOMAINE.fr par ton vrai nom de domaine.
+User-agent: *
+Allow: /
+
+Sitemap: https://VOTRE-DOMAINE.fr/sitemap.xml
