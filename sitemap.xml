@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Plan du site pour Google. À FAIRE : remplace VOTRE-DOMAINE.fr par ton vrai nom de domaine.
+<!-- Plan du site pour Google. Domaine déjà renseigné : ayda-lashlift.fr.
      Ensuite, envoie ce fichier dans Google Search Console (rubrique "Sitemaps"). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://VOTRE-DOMAINE.fr/</loc>
+    <loc>https://ayda-lashlift.fr/</loc>
   </url>
 </urlset>
